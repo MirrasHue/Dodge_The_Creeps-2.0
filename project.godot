@@ -15,9 +15,15 @@ _global_script_class_icons={
 
 [application]
 
-config/name="New Game Project"
+config/name="Dodge the Creeps 2.0"
 run/main_scene="res://Main/Main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=420
+window/size/height=640
+window/size/resizable=false
 
 [rendering]
 
