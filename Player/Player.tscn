@@ -9,14 +9,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "Up",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "Up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -30,6 +30,7 @@ radius = 18.0
 height = 10.0
 
 [node name="Player" type="Area2D"]
+gravity = 0.0
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
