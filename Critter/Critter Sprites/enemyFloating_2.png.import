@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemySpikey_1.png-c5c60f491c63c8f02d07b763311183b0.stex"
+path="res://.import/enemyFloating_2.png-74732fddaf75c5447a50dc3732a7ece3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Critter/enemySpikey_1.png"
-dest_files=[ "res://.import/enemySpikey_1.png-c5c60f491c63c8f02d07b763311183b0.stex" ]
+source_file="res://Critter/Critter Sprites/enemyFloating_2.png"
+dest_files=[ "res://.import/enemyFloating_2.png-74732fddaf75c5447a50dc3732a7ece3.stex" ]
 
 [params]
 

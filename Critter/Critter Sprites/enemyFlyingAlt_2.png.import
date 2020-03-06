@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemyFlyingAlt_1.png-99b13edc6f413bc46242dee3999fbae3.stex"
+path="res://.import/enemyFlyingAlt_2.png-b8d9a89848703aff7e465d056c435c62.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Critter/enemyFlyingAlt_1.png"
-dest_files=[ "res://.import/enemyFlyingAlt_1.png-99b13edc6f413bc46242dee3999fbae3.stex" ]
+source_file="res://Critter/Critter Sprites/enemyFlyingAlt_2.png"
+dest_files=[ "res://.import/enemyFlyingAlt_2.png-b8d9a89848703aff7e465d056c435c62.stex" ]
 
 [params]
 

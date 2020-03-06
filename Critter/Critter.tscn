@@ -1,15 +1,16 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Critter/enemyFlying_4.png" type="Texture" id=1]
-[ext_resource path="res://Critter/enemyFloating_2.png" type="Texture" id=2]
-[ext_resource path="res://Critter/enemyFlyingAlt_1.png" type="Texture" id=3]
-[ext_resource path="res://Critter/enemyFloating_3.png" type="Texture" id=4]
-[ext_resource path="res://Critter/enemySpikey_4.png" type="Texture" id=5]
-[ext_resource path="res://Critter/enemyFloating_1.png" type="Texture" id=6]
-[ext_resource path="res://Critter/enemyFlyingAlt_2.png" type="Texture" id=7]
-[ext_resource path="res://Critter/enemySpikey_2.png" type="Texture" id=8]
-[ext_resource path="res://Critter/enemySpikey_1.png" type="Texture" id=9]
+[ext_resource path="res://Critter/Critter Sprites/enemyFlying_4.png" type="Texture" id=1]
+[ext_resource path="res://Critter/Critter Sprites/enemyFloating_2.png" type="Texture" id=2]
+[ext_resource path="res://Critter/Critter Sprites/enemyFlyingAlt_1.png" type="Texture" id=3]
+[ext_resource path="res://Critter/Critter Sprites/enemyFloating_3.png" type="Texture" id=4]
+[ext_resource path="res://Critter/Critter Sprites/enemySpikey_4.png" type="Texture" id=5]
+[ext_resource path="res://Critter/Critter Sprites/enemyFloating_1.png" type="Texture" id=6]
+[ext_resource path="res://Critter/Critter Sprites/enemyFlyingAlt_2.png" type="Texture" id=7]
+[ext_resource path="res://Critter/Critter Sprites/enemySpikey_2.png" type="Texture" id=8]
+[ext_resource path="res://Critter/Critter Sprites/enemySpikey_1.png" type="Texture" id=9]
 [ext_resource path="res://Critter/Critter.cs" type="Script" id=10]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
