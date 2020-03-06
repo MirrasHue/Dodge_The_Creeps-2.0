@@ -40,5 +40,6 @@ __meta__ = {
 frames = SubResource( 1 )
 animation = "Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="OnCollisionDetected"]
