@@ -26,24 +26,27 @@ public class Player : Area2D
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
     {
-        AnimSprite = GetNode<AnimatedSprite>("AnimatedSprite");
-
-        if(Velocity.x != 0)
+        if(bIsPlaying)
         {
-            AnimSprite.Animation = "Right";
-            AnimSprite.FlipH = Velocity.x < 0;
-            AnimSprite.FlipV = false;
-        }
-        else
-        if(Velocity.y != 0)
-        {
-            AnimSprite.Animation = "Up";
-            AnimSprite.FlipV = Velocity.y > 0;
-        }
-        else
-            AnimSprite.Animation = "Idle";
+            AnimSprite = GetNode<AnimatedSprite>("AnimatedSprite");
 
-        AnimSprite.Play();
+            if(Velocity.x != 0)
+            {
+                AnimSprite.Animation = "Right";
+                AnimSprite.FlipH = Velocity.x < 0;
+                AnimSprite.FlipV = false;
+            }
+            else
+            if(Velocity.y != 0)
+            {
+                AnimSprite.Animation = "Up";
+                AnimSprite.FlipV = Velocity.y > 0;
+            }
+            else
+                AnimSprite.Animation = "Idle";
+
+            AnimSprite.Play();
+        }
     }
 
     public override void _PhysicsProcess(float delta)
