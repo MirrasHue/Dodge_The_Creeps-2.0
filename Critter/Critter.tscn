@@ -13,6 +13,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Spikey",
+"speed": 3.0
+}, {
 "frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "Spikey_Orb",
@@ -22,11 +27,6 @@ animations = [ {
 "loop": true,
 "name": "Fly",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "Spikey",
-"speed": 3.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -34,6 +34,7 @@ radius = 20.0
 
 [node name="Critter" type="RigidBody2D"]
 collision_mask = 0
+gravity_scale = 0.0
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true

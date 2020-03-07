@@ -19,4 +19,9 @@ public class Critter : RigidBody2D
     {
         QueueFree();
     }
+
+    public void OnStartGame()
+    {
+        QueueFree();
+    }
 }

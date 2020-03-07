@@ -21,6 +21,19 @@ public class HUD : CanvasLayer
         GetNode<Timer>("MessageTimer").Start();
     }
 
+    async public void ShowGameOver()
+    {
+        ShowMessage("Game Over");
+
+        await ToSignal(GetNode<Timer>("MessageTimer"), "timeout");
+
+        var Message = GetNode<Label>("MessageLabel");
+        Message.Text = "Dodge\nthe\nCreeps";
+        Message.Show();
+
+        GetNode<Button>("StartButton").Show();
+    }
+
     public void OnStartButtonPressed()
     {
         GetNode<Button>("StartButton").Hide();

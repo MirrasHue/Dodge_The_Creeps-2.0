@@ -7,19 +7,31 @@ public class Player : Area2D
 
     [Export] public int Speed = 250;
 
-    private bool bIsPlaying = true;
+    private bool bIsPlaying = false;
 
     private Vector2 SCREEN_SIZE;
 
     private Vector2 Velocity = new Vector2();
 
-    private AnimatedSprite AnimSprite;
+    private AnimatedSprite AnimSprite = new AnimatedSprite();
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        Hide();
         SCREEN_SIZE = GetViewport().Size;
+        GetParent().GetNode<HUD>("HUD").Connect("StartGame", this, "IsPlaying");
+        Connect("Dead", this, "IsNotPlaying");
+        Hide();
+    }
+
+    public void IsPlaying()
+    {
+        bIsPlaying = true;
+    }
+
+    public void IsNotPlaying()
+    {
+        bIsPlaying = false;
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,6 +39,7 @@ public class Player : Area2D
     {
         if(bIsPlaying)
         {
+            GD.Print("test");
             AnimSprite = GetNode<AnimatedSprite>("AnimatedSprite");
 
             if(Velocity.x != 0)
