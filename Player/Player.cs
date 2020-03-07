@@ -39,7 +39,6 @@ public class Player : Area2D
     {
         if(bIsPlaying)
         {
-            GD.Print("test");
             AnimSprite = GetNode<AnimatedSprite>("AnimatedSprite");
 
             if(Velocity.x != 0)
