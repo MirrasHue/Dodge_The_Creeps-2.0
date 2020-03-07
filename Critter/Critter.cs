@@ -3,19 +3,20 @@ using System;
 
 public class Critter : RigidBody2D
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
+    private String[] EnemyTypes = {"Fly", "Spikey", "Spikey_Orb"};
+
+    private AnimatedSprite AnimSprite;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
+        AnimSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+        AnimSprite.Animation = EnemyTypes[new Random().Next(0, EnemyTypes.Length)];
+        AnimSprite.Play();
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    public void OnNotVisible()
+    {
+        QueueFree();
+    }
 }

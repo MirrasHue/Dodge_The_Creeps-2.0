@@ -3,9 +3,8 @@ using System;
 
 public class HUD : CanvasLayer
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
+    [Signal]
+    public delegate void StartGame();
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -13,9 +12,28 @@ public class HUD : CanvasLayer
         
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    public void ShowMessage(String text)
+    {
+        var Message = GetNode<Label>("MessageLabel");
+        Message.Text = text;
+        Message.Show();
+        
+        GetNode<Timer>("MessageTimer").Start();
+    }
+
+    public void OnStartButtonPressed()
+    {
+        GetNode<Button>("StartButton").Hide();
+        EmitSignal("StartGame");
+    }
+
+    public void UpdateScore(int score)
+    {
+        GetNode<Label>("ScoreLabel").Text = score.ToString();
+    }
+
+    public void OnMessageTimerTimeout()
+    {
+        GetNode<Label>("MessageLabel").Hide();
+    }
 }

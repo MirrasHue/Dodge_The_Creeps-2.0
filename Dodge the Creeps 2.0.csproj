@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Critter\Critter.cs" />
     <Compile Include="HUD\HUD.cs" />
+    <Compile Include="Main\Main.cs" />
     <Compile Include="Player\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

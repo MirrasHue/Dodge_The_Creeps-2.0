@@ -3,11 +3,9 @@ using System;
 
 public class Player : Area2D
 {
-    [Signal]
-    public delegate void Dead();
+    [Signal] public delegate void Dead();
 
-    [Export]
-    public int Speed = 250;
+    [Export] public int Speed = 250;
 
     private bool bIsPlaying = true;
 
@@ -20,6 +18,7 @@ public class Player : Area2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        Hide();
         SCREEN_SIZE = GetViewport().Size;
     }
 
@@ -63,6 +62,14 @@ public class Player : Area2D
             Position = new Vector2(Mathf.Clamp(Position.x, 0, SCREEN_SIZE.x),
                                    Mathf.Clamp(Position.y, 0, SCREEN_SIZE.y));
         }
+    }
+
+    public void BeginPlay(Vector2 spawnPos)
+    {
+        Position = spawnPos;
+        AnimSprite.FlipV = false;
+        Show();
+        GetNode<CollisionShape2D>("Collision").Disabled = false;
     }
 
     public void OnCollisionDetected(PhysicsBody2D body2D)

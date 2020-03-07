@@ -40,7 +40,6 @@ text = "Dodge
 the
 Creeps"
 align = 1
-valign = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -64,3 +63,5 @@ __meta__ = {
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+[connection signal="pressed" from="StartButton" to="." method="OnStartButtonPressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="OnMessageTimerTimeout"]
