@@ -6,12 +6,6 @@ public class HUD : CanvasLayer
     [Signal]
     public delegate void StartGame();
 
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
-    {
-        
-    }
-
     public void ShowMessage(String text)
     {
         var Message = GetNode<Label>("MessageLabel");
@@ -21,10 +15,14 @@ public class HUD : CanvasLayer
         GetNode<Timer>("MessageTimer").Start();
     }
 
+    /* Launch a separate thread to keep track of whether the MessageTimer reaches 0 or not,
+       thus each message is shown for the expected period of time. */
     async public void ShowGameOver()
     {
         ShowMessage("Game Over");
 
+        /* This statement kinda says: Don't proceed until the MessageTimer reaches 0.
+           So it basically waits for the "timeout" signal be emitted from the specified timer. */
         await ToSignal(GetNode<Timer>("MessageTimer"), "timeout");
 
         var Message = GetNode<Label>("MessageLabel");
