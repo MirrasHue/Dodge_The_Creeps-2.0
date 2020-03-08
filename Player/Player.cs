@@ -21,7 +21,6 @@ public class Player : Area2D
         SCREEN_SIZE = GetViewport().Size;
         GetParent().GetNode<HUD>("HUD").Connect("StartGame", this, "IsPlaying");
         Connect("Dead", this, "IsNotPlaying");
-        Hide();
     }
 
     public void IsPlaying()
@@ -80,13 +79,18 @@ public class Player : Area2D
     {
         Position = spawnPos;
         AnimSprite.FlipV = false;
-        Show();
         GetNode<CollisionShape2D>("Collision").Disabled = false;
+        ZIndex = 1; // Fix ghost effect when restart the game
     }
 
     public void OnCollisionDetected(PhysicsBody2D body2D)
     {
-        Hide();
+        // Bug fixed, the trail's particles no longer appear on the last place the player has died
+        // when the game is restarted
+        var Location = GetParent().GetNode<Position2D>("Position").Position;
+        Position = Location;
+        ZIndex = -1;
+
         EmitSignal("Dead");
         GetNode<CollisionShape2D>("Collision").SetDeferred("disabled", true);
     }

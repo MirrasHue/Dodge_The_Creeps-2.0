@@ -20,7 +20,11 @@ public class Main : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
+        var Music = GetNode<AudioStreamPlayer>("MainMusic");
+        Music.VolumeDb = -25f;
+        Music.Play();
+
+        GetNode<AudioStreamPlayer>("DeathSound").VolumeDb = -20f;
     }
 
     public void NewGame()
@@ -40,6 +44,7 @@ public class Main : Node2D
     public void GameOver()
     {
         GetNode<HUD>("HUD").ShowGameOver();
+        GetNode<AudioStreamPlayer>("DeathSound").Play();
 
         GetNode<Timer>("ScoreTimer").Stop();
         GetNode<Timer>("CritterTimer").Stop();
