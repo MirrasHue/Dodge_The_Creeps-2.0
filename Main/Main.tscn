@@ -9,7 +9,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 420, 0, 0, 0, 0, 0, 420, 640, 0, 0, 0, 0, 0, 640, 0, 0, 0, 0, 0, 0 )
+"points": PoolVector2Array( 0, 0, 0, 0, -96, -96, 0, 0, 0, 0, 512, -96, 0, 0, 0, 0, 512, 736, 0, 0, 0, 0, -96, 736, 0, 0, 0, 0, -96, -96 )
 }
 
 [node name="Main" type="Node2D"]
@@ -34,7 +34,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="CritterTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.25
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
@@ -44,7 +44,10 @@ position = Vector2( 210, 320 )
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource( 1 )
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="SpawnLocation" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -96, 685.067 )
+rotation = -1.5708
+offset = 2092.04
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
